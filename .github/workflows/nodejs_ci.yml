@@ -24,15 +24,15 @@ jobs:
 
             # Step to cache Node.js dependencies
             - name: Cache Node.js dependencies
-                uses: actions/cache@v2
-                with:
-                    path: ~/.npm
-                    key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('${{ env.OUTPUT_PATH }}/package-lock.json') }}
-                    restore-keys: |
-                        ${{ runner.os }}-node-${{ matrix.node-version }}-
+              uses: actions/cache@v2
+              with:
+                path: ~/.npm
+                key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('${{ env.OUTPUT_PATH }}/package-lock.json') }}
+                restore-keys: |
+                  ${{ runner.os }}-node-${{ matrix.node-version }}-
 
             # Step to set up the specified version of Node.js
             - name: Use Node.js ${{ matrix.node-version }}
-                uses: actions/setup-node@v3
-                with:
-                    node-version: ${{ matrix.node-version }}
+              uses: actions/setup-node@v3
+              with:
+                node-version: ${{ matrix.node-version }}
