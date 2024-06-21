@@ -2,7 +2,7 @@ name: Node.js CI
 
 env:
   OUTPUT_PATH: ${{ github.workspace }}
-
+  
 on:
   push:
     branches:
