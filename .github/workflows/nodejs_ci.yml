@@ -19,10 +19,8 @@ jobs:
         node-version: [18.x]
 
     steps:
-      # Step to checkout the repository
       - uses: actions/checkout@v3
 
-      # Step to cache Node.js dependencies
       - name: Cache Node.js dependencies
         uses: actions/cache@v2
         with:
@@ -31,8 +29,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-${{ matrix.node-version }}-
 
-      # Step to set up the specified version of Node.js
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix. Node-version }}
+          node-version: ${{ matrix.node-version }}
